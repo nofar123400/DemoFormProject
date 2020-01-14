@@ -18,7 +18,8 @@
     <Name>DemoFormProject</Name>
     <RootNamespace>DemoFormProject</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
-    <InterpreterId>CondaEnv|CondaEnv|FormDemoEnv</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|env</InterpreterId>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -81,6 +82,7 @@
     <Content Include="DemoFormProject\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|env" />
     <InterpreterReference Include="CondaEnv|CondaEnv|FormDemoEnv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
