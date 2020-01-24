@@ -18,7 +18,7 @@
     <Name>DemoFormProject</Name>
     <RootNamespace>DemoFormProject</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|FormDemoEnv</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
