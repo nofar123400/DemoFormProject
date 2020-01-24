@@ -82,6 +82,7 @@ def Album():
 def Query():
 
     Name = None
+    Country = ''
     capital = ''
     df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\capitals.csv'))
     df = df.set_index('Country')
@@ -90,6 +91,7 @@ def Query():
      
     if (request.method == 'POST' ):
         name = form.name.data
+        Country = name
         if (name in df.index):
             capital = df.loc[name,'Capital']
         else:
@@ -101,6 +103,7 @@ def Query():
     return render_template('Query.html', 
             form = form, 
             name = capital, 
+            Country = Country,
             raw_data_table = raw_data_table,
             title='Query by the user',
             year=datetime.now().year,
