@@ -18,7 +18,9 @@
     <Name>DemoFormProject</Name>
     <RootNamespace>DemoFormProject</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|env</InterpreterId>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +31,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DemoFormProject\Models\LocalDatabaseRoutines.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DemoFormProject\Models\QueryFormStructure.py">
       <SubType>Code</SubType>
     </Compile>
@@ -48,8 +53,11 @@
     <Folder Include="DemoFormProject\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DemoFormProject\static\Data\users.csv" />
     <Content Include="DemoFormProject\static\Data\capitals.csv" />
     <Content Include="DemoFormProject\static\Pics\pic1.jpg" />
+    <Content Include="DemoFormProject\templates\register.html" />
+    <Content Include="DemoFormProject\templates\login.html" />
     <Content Include="DemoFormProject\templates\PictureAlbum.html" />
     <Content Include="DemoFormProject\templates\query.html" />
     <Content Include="requirements.txt" />
@@ -81,6 +89,7 @@
     <Content Include="DemoFormProject\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|env" />
     <InterpreterReference Include="CondaEnv|CondaEnv|FormDemoEnv" />
   </ItemGroup>
   <ItemGroup>
