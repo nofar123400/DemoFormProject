@@ -104,7 +104,7 @@ def Query():
             capital = name + ', no such country'
         form.name.data = ''
 
-    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\users.csv'))
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\capitals.csv'))
 
     raw_data_table = df.to_html(classes = 'table table-hover')
 
@@ -166,4 +166,17 @@ def Login():
         year=datetime.now().year,
         repository_name='Pandas',
         )
+
+
+
+@app.route('/DataModel')
+def DataModel():
+    """Renders the contact page."""
+    return render_template(
+        'DataModel.html',
+        title='This is my Data Model page',
+        year=datetime.now().year,
+        message='This page will hold the inforation about the data I am using'
+    )
+
 

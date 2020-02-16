@@ -18,7 +18,7 @@
     <Name>DemoFormProject</Name>
     <RootNamespace>DemoFormProject</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
-    <InterpreterId>CondaEnv|CondaEnv|FormDemoEnv</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|env</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +54,7 @@
     <Content Include="DemoFormProject\static\Data\users.csv" />
     <Content Include="DemoFormProject\static\Data\capitals.csv" />
     <Content Include="DemoFormProject\static\Pics\pic1.jpg" />
+    <Content Include="DemoFormProject\templates\DataModel.html" />
     <Content Include="DemoFormProject\templates\register.html" />
     <Content Include="DemoFormProject\templates\login.html" />
     <Content Include="DemoFormProject\templates\PictureAlbum.html" />
@@ -88,7 +89,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="CondaEnv|CondaEnv|env" />
-    <InterpreterReference Include="CondaEnv|CondaEnv|FormDemoEnv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
