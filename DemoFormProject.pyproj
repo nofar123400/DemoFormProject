@@ -55,6 +55,7 @@
     <Content Include="DemoFormProject\static\Data\capitals.csv" />
     <Content Include="DemoFormProject\static\Pics\pic1.jpg" />
     <Content Include="DemoFormProject\templates\DataModel.html" />
+    <Content Include="DemoFormProject\templates\DataSet1.html" />
     <Content Include="DemoFormProject\templates\register.html" />
     <Content Include="DemoFormProject\templates\login.html" />
     <Content Include="DemoFormProject\templates\PictureAlbum.html" />

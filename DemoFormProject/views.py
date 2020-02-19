@@ -93,6 +93,8 @@ def Query():
     df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\capitals.csv'))
     df = df.set_index('Country')
 
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
     form = QueryFormStructure(request.form)
      
     if (request.method == 'POST' ):
@@ -100,13 +102,12 @@ def Query():
         Country = name
         if (name in df.index):
             capital = df.loc[name,'Capital']
+            raw_data_table = ""
         else:
             capital = name + ', no such country'
         form.name.data = ''
 
-    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\capitals.csv'))
 
-    raw_data_table = df.to_html(classes = 'table table-hover')
 
     return render_template('Query.html', 
             form = form, 
@@ -175,6 +176,23 @@ def DataModel():
     return render_template(
         'DataModel.html',
         title='This is my Data Model page abou UFO',
+        year=datetime.now().year,
+        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
+    )
+
+
+@app.route('/DataSet1')
+def DataSet1():
+
+    df = pd.read_csv(path.join(path.dirname(__file__), 'static\\Data\\capitals.csv'))
+    raw_data_table = df.to_html(classes = 'table table-hover')
+
+
+    """Renders the contact page."""
+    return render_template(
+        'DataSet1.html',
+        title='This is Data Set 1 page',
+        raw_data_table = raw_data_table,
         year=datetime.now().year,
         message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
     )
