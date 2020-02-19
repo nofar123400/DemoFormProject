@@ -174,9 +174,9 @@ def DataModel():
     """Renders the contact page."""
     return render_template(
         'DataModel.html',
-        title='This is my Data Model page',
+        title='This is my Data Model page abou UFO',
         year=datetime.now().year,
-        message='This page will hold the inforation about the data I am using'
+        message='In this page we will display the datasets we are going to use in order to answer ARE THERE UFOs'
     )
 
 
